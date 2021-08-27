@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": "vqyaOdem1D",
+      "name": "Rosie Simpson",
+      "number": "459-12-56"
+    },
+    {
+      "id": "PIQC8lPiSg",
+      "name": "Alex Bro",
+      "number": "222-33-44"
+    },
+    {
+      "id": "rZ-8o-kmJK",
+      "name": "Der Braun",
+      "number": "111-22-33"
+    },
+    {
+      "id": "cNSkxCYJtb",
+      "name": "qwerty",
+      "number": "459-12-56"
+    },
+    {
+      "id": "jWFovr4qO-",
+      "name": "Foo",
+      "number": "459-12-56"
+    },
+    {
+      "id": "8DpmM_diWX",
+      "name": "RosA Simpson",
+      "number": "459-12-56"
+    }
+  ]
+}

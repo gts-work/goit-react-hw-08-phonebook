@@ -1,0 +1,57 @@
+.form {
+  width: 100%;
+
+  text-align: left;
+}
+
+.form > label {
+  display: block;
+
+  width: 100%;
+
+  margin-bottom: 25px;
+}
+
+.form_input {
+  width: 85%;
+
+  /* margin-bottom: 25px; */
+}
+
+.label_name {
+  display: inline-block;
+
+  width: 70px;
+}
+
+.add_contact_btn {
+  display: block;
+
+  margin-left: auto;
+  margin-bottom: 25px;
+}
+
+.add_contact_btn {
+  display: block;
+
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-bottom: 25px;
+  /* margin: 10px; */
+
+  background-color: cadetblue;
+
+  border: none;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700px;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.add_contact_btn:hover {
+  background-color: #008cba;
+}

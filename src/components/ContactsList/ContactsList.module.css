@@ -1,0 +1,48 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tbody > tr > td {
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-color: darkgray;
+
+  background: white;
+  color: blueviolet;
+  padding: 10px 20px;
+}
+
+th,
+thead > tr > td {
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-color: darkgray;
+
+  /* background: #d8e6f3; */
+  background: cadetblue;
+
+  color: white;
+}
+
+td {
+  /* color: rgb(63, 49, 49); */
+}
+
+.delete_contact_btn {
+  background-color: cadetblue;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 700px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 80px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.delete_contact_btn:hover {
+  background-color: brown;
+}
