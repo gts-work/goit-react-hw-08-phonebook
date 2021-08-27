@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import Container from "./components/Container";
 import Loader from "./components/Loader";
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
@@ -9,8 +10,8 @@ import RegisterView from "./views/RegisterView";
 import ContactsView from "./views/ContactsView";
 import { authOperations } from "./redux/auth";
 
-const Navigation = lazy(() =>
-  import("./components/Navigation" /* webpackChunkName: "home-page" */)
+const AppBar = lazy(() =>
+  import("./components/AppBar" /* webpackChunkName: "app-bar" */)
 );
 
 function App() {
@@ -21,9 +22,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <Container>
       <Suspense fallback={<Loader />}>
-        <Navigation />
+        <AppBar />
 
         <Switch>
           <Route exact path="/" component={HomeView} />
@@ -33,7 +34,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </Suspense>
-    </div>
+    </Container>
   );
 }
 

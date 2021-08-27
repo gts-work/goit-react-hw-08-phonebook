@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://lpj-tasker.herokuapp.com";
+axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
 const token = {
   set(token) {
@@ -24,6 +24,9 @@ const register = createAsyncThunk("auth/register", async (credentials) => {
     return data;
   } catch (error) {
     // TODO: Добавить обработку ошибки error.message
+    console.log("register ~ error  ==>> ", error);
+    console.log("register ~ error message  ==>> ", error.message);
+    console.log("register ~ error text  ==>> ", error.text);
   }
 });
 

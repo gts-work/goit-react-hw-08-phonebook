@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:4040";
+// axios.defaults.baseURL = "http://localhost:4040";
 const contactListUrl = "/contacts";
 
 async function fetchContacts() {

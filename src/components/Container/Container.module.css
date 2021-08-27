@@ -1,0 +1,16 @@
+.container {
+  display: block;
+
+  max-width: 800px;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 15px;
+
+  text-align: center;
+
+  background-color: #fff;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+}
