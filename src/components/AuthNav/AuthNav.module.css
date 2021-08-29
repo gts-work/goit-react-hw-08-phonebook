@@ -1,0 +1,19 @@
+.nav_container {
+  display: flex;
+
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+
+  border-bottom: 2px solid darkslateblue;
+}
+
+.nav_link {
+  margin-right: 20px;
+  color: black;
+}
+
+.nav_link_active {
+  color: red;
+}

@@ -1,38 +1,31 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styles from "./AuthNav.module.css";
 
-const styles = {
-  link: {
-    display: "inline-block",
-    textDecoration: "none",
-    padding: 12,
-    fontWeight: 700,
-    color: "#2A363B",
-  },
-  activeLink: {
-    color: "#E84A5F",
-  },
-};
+const AUTH_NAV_TITLES = [
+  { id: "t3", title: "Sign in", url: "/login" },
+  { id: "t4", title: "Join us", url: "/register" },
+];
 
 export default function AuthNav() {
   return (
-    <div>
-      <NavLink
-        to="/register"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
-        Регистрация
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
-        Логин
-      </NavLink>
-    </div>
+    <ul className={styles.nav_container}>
+      {AUTH_NAV_TITLES.map((nav) => {
+        const { id, url, title } = nav;
+
+        return (
+          <li key={id}>
+            <NavLink
+              exact
+              to={url}
+              className={styles.nav_link}
+              activeClassName={styles.nav_link_active}
+            >
+              {title}
+            </NavLink>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
