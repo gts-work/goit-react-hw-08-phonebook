@@ -1,8 +1,5 @@
 import axios from "axios";
 
-// axios.defaults.baseURL = "http://localhost:4040";
-const contactListUrl = "/contacts";
-
 async function fetchContacts() {
   const { data } = await axios.get("/contacts");
   console.log("fetchContacts ~ data === >>>  ", data);

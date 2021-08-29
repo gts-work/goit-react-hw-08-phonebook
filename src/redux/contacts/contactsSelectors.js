@@ -6,6 +6,9 @@ const getContactsFilter = (state) => state.contacts.filter;
 const getVisibleContacts = createSelector(
   [getContactsItems, getContactsFilter],
   (allContacts, filter) => {
+    // console.log("allContacts  ==>>  ", allContacts);
+    // console.log("allContacts length  ==>>  ", allContacts.length);
+    // console.log("filter  ==>>  ", filter);
     const normalizedFilter = filter.toLowerCase();
 
     const getAllContacts = allContacts.filter(({ name }) =>

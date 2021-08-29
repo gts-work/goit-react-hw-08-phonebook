@@ -6,15 +6,23 @@ import { contactsOperations } from "redux/contacts";
 import { сontactsSelectors } from "redux/contacts";
 import ContactItem from "./ContactItem";
 
+// const dispatch = useDispatch();
+// const isLoadingTodos = useSelector(todosSelectors.getLoading);
+
+// const [isModalOpen, setIsModalOpen] = useState(false);
+// const toggleModal = () => setIsModalOpen((state) => !state);
+
+// useEffect(() => dispatch(todosOperations.fetchTodos()), [dispatch]);
+
 const ContactsList = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
-
   const contacts = useSelector((state) => {
     console.log("ContactsList ~ state: ", state);
-    сontactsSelectors.getVisibleContacts(state);
+    return сontactsSelectors.getVisibleContacts(state);
   });
+
+  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   console.log("ContactsList ~ contacts: ", contacts);
 
