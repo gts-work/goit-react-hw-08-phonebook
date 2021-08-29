@@ -1,17 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Form, Col, Row, Button } from "react-bootstrap";
 import { authOperations } from "../redux/auth";
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
 
 class RegisterView extends Component {
   state = {
@@ -26,9 +16,7 @@ class RegisterView extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     this.props.onRegister(this.state);
-
     this.setState({ name: "", email: "", password: "" });
   };
 
@@ -36,47 +24,64 @@ class RegisterView extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
-        <h1>Страница регистрации</h1>
+      <>
+        <h1>Registration</h1>
 
-        <form
-          onSubmit={this.handleSubmit}
-          style={styles.form}
-          autoComplete="off"
-        >
-          <label style={styles.label}>
-            Имя
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={this.handleChange}
-            />
-          </label>
+        <Form onSubmit={this.handleSubmit} autoComplete="off">
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm="2">
+              Name
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                name="name"
+                value={name}
+                onChange={this.handleChange}
+                placeholder="Alex Bro"
+              />
+            </Col>
+          </Form.Group>
 
-          <label style={styles.label}>
-            Почта
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm="2">
+              Email
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="email"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+                placeholder="name@example.com"
+              />
+            </Col>
+          </Form.Group>
 
-          <label style={styles.label}>
-            Пароль
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </label>
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Password
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+                placeholder="Password"
+              />
+            </Col>
+          </Form.Group>
 
-          <button type="submit">Зарегистрироваться</button>
-        </form>
-      </div>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </>
     );
   }
 }

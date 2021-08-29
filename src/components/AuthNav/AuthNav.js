@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 import styles from "./AuthNav.module.css";
 
 const AUTH_NAV_TITLES = [
@@ -9,23 +10,16 @@ const AUTH_NAV_TITLES = [
 
 export default function AuthNav() {
   return (
-    <ul className={styles.nav_container}>
+    <Nav className={styles.nav_container}>
       {AUTH_NAV_TITLES.map((nav) => {
         const { id, url, title } = nav;
 
         return (
-          <li key={id}>
-            <NavLink
-              exact
-              to={url}
-              className={styles.nav_link}
-              activeClassName={styles.nav_link_active}
-            >
-              {title}
-            </NavLink>
-          </li>
+          <Nav.Link exact eventKey={id} key={id} href={url}>
+            {title}
+          </Nav.Link>
         );
       })}
-    </ul>
+    </Nav>
   );
 }

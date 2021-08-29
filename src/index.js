@@ -8,6 +8,9 @@ import store from "./redux/store";
 import "modern-normalize/modern-normalize.css";
 import "./styles.css";
 
+// Importing the Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store.store}>

@@ -1,17 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Form, Col, Row, Button } from "react-bootstrap";
 import { authOperations } from "../redux/auth";
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -19,6 +9,9 @@ export default function LoginView() {
   const [password, setPassword] = useState("");
 
   const handleChange = ({ target: { name, value } }) => {
+    console.log("handleChange ~ name ===>> ", name);
+    console.log("handleChange ~ value ===>> ", value);
+
     switch (name) {
       case "email":
         return setEmail(value);
@@ -37,32 +30,44 @@ export default function LoginView() {
   };
 
   return (
-    <div>
-      <h1>Страница логина</h1>
+    <>
+      <h1>Login</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+          <Form.Label column sm="2">
+            Email
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              placeholder="name@example.com"
+            />
+          </Col>
+        </Form.Group>
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="2">
+            Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              placeholder="Password"
+            />
+          </Col>
+        </Form.Group>
 
-        <button type="submit">Войти</button>
-      </form>
-    </div>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </>
   );
 }
