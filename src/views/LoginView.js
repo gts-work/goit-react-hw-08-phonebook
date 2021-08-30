@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Form, Col, Row, Button } from "react-bootstrap";
-import { authOperations } from "../redux/auth";
+import { authOperations, authSelectors } from "../redux/auth";
+
+import ModalError from "../components/ModalError";
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -29,8 +31,12 @@ export default function LoginView() {
     setPassword("");
   };
 
+  const loginErrors = useSelector(authSelectors.getLoginErrors);
+  console.log("LoginView ~ loginErrors  ==>> ", loginErrors);
+
   return (
     <>
+      {loginErrors && <ModalError msg={"Incorrect login or password"} />}
       <h1>Login</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">

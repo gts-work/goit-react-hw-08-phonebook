@@ -1,5 +1,5 @@
 .nav_container {
-  display: flex;
+  display: inline-block;
 
   padding-bottom: 20px;
   padding-left: 20px;

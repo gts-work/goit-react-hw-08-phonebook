@@ -29,18 +29,3 @@ export default {
   getContactsFilter,
   getVisibleContacts,
 };
-
-// const getVisibleContacts = (state) => {
-//     const allContacts = getContactsItems(state);
-//     const filter = getContactsFilter(state);
-
-//     const normalizedFilter = filter.toLowerCase();
-
-//     const getAllContacts = allContacts.filter(({ name }) =>
-//         name.toLowerCase().includes(normalizedFilter)
-//     );
-
-//     console.log("getVisibleContacts ~ getAllContacts ==>  ", getAllContacts);
-
-//     return getAllContacts;
-// };

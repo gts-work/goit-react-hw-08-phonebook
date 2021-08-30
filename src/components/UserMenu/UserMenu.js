@@ -5,6 +5,10 @@ import styles from "./UserMenu.module.css";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
+
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  console.log("UserMenu ~ isLoggedIn ===>>  ", isLoggedIn);
+
   const name = useSelector(authSelectors.getUsername);
 
   return (
