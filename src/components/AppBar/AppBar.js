@@ -11,13 +11,13 @@ export default function AppBar() {
 
   return (
     <>
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
       <Navbar bg="primary" variant="dark">
         <Container>
           <Navbar.Brand eventKey="t1" href="/">
             Home
           </Navbar.Brand>
           <Navigation />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Container>
       </Navbar>
     </>

@@ -1,4 +1,4 @@
-.nav_container {
+/* .nav_container {
   margin-right: 0px;
 }
 
@@ -9,4 +9,13 @@
 
 .nav_link_active {
   color: red;
+} */
+
+.nav_link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: red;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }

@@ -12,17 +12,18 @@ export default function UserMenu() {
   const name = useSelector(authSelectors.getUsername);
 
   return (
-    <Nav className="me-auto">
-      <Nav.Link>
+    <Nav className="justify-content-end">
+      <Nav.Item>
         <span className={styles.name}>Hello, {name}</span>
-        <Button
-          className={styles.btn_logout}
-          variant="outline-warning"
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link
+          eventKey="logout"
           onClick={() => dispatch(authOperations.logOut())}
         >
-          Logout
-        </Button>
-      </Nav.Link>
+          <Button variant="outline-danger">Logout</Button>{" "}
+        </Nav.Link>
+      </Nav.Item>
     </Nav>
   );
 }
