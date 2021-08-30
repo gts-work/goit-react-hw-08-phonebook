@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Button } from "react-bootstrap";
 
 import { contactsOperations } from "redux/contacts";
 import styles from "./ContactsList.module.css";
@@ -10,13 +11,9 @@ const ContactItem = ({ id, name, number, onDelete }) => (
     <td>{name}</td>
     <td>{number}</td>
     <td>
-      <button
-        className={styles.delete_contact_btn}
-        value={id}
-        onClick={() => onDelete(id)}
-      >
+      <Button variant="outline-danger" value={id} onClick={() => onDelete(id)}>
         Delete
-      </button>
+      </Button>
     </td>
   </tr>
 );

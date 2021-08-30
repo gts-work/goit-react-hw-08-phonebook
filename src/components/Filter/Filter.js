@@ -1,21 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { InputGroup, FormControl } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { contactsAction } from "redux/contacts";
 import { сontactsSelectors } from "redux/contacts";
-import styles from "./Filter.module.css";
 
 const Fiter = ({ value, onChange }) => (
-  <label>
-    <span className={styles.title_filter}>Find contacts by name</span>
-    <input
-      className={styles.input_filter}
-      type="text"
+  <InputGroup className="mb-3">
+    <InputGroup.Text id="find-contacts-by-name">
+      <FontAwesomeIcon icon={faSearch} />
+    </InputGroup.Text>
+    <FormControl
       value={value}
       onChange={onChange}
+      placeholder="Find contacts by name"
+      aria-label="Find contacts by name"
+      aria-describedby="find-contacts-by-name"
     />
-  </label>
+  </InputGroup>
 );
 
 Fiter.defaultProps = {

@@ -20,7 +20,7 @@ thead > tr > td {
   border-color: darkgray;
 
   /* background: #d8e6f3; */
-  background: cadetblue;
+  background: #0d6efd;
 
   color: white;
 }
@@ -30,7 +30,7 @@ td {
 }
 
 .delete_contact_btn {
-  background-color: cadetblue;
+  background-color: #0d6efd;
   border: none;
   color: white;
   font-size: 12px;

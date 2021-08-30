@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 
 import { contactsOperations } from "redux/contacts";
@@ -27,22 +28,21 @@ const ContactsList = () => {
   console.log("ContactsList ~ contacts: ", contacts);
 
   return (
-    <div>
+    <>
       <h3>Contacts</h3>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Phone</td>
-          </tr>
-        </thead>
+      <Table striped bordered hover>
+        <tr>
+          <th>User</th>
+          <th>Pfone number</th>
+          <th>Action</th>
+        </tr>
         <tbody>
           {contacts.map(({ id, name, number }) => (
             <ContactItem id={id} name={name} number={number} />
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </>
   );
 };
 
