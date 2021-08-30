@@ -11,7 +11,7 @@ export default function Navigation() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
-    <Nav className="me-auto">
+    <Nav className={"me-auto"}>
       {NAV_TITLES.map((nav) => {
         const { id, url, title } = nav;
 
