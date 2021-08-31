@@ -20,9 +20,15 @@ const HomeView = () => {
             ? "You can continue to add and save your contacts"
             : "You must log in or register to start adding or saving your contacts"}
         </Card.Text>
-        <Nav.Link exact eventKey="contacts" href="/contacts">
-          <Button variant="outline-primary">Go to you phonebook</Button>{" "}
-        </Nav.Link>
+        {isLoggedIn ? (
+          <Nav.Link exact eventKey="contacts" href="/contacts">
+            <Button variant="outline-primary">Go to you phonebook</Button>{" "}
+          </Nav.Link>
+        ) : (
+          <Nav.Link exact eventKey="contacts" href="/register">
+            <Button variant="outline-primary">To registration</Button>{" "}
+          </Nav.Link>
+        )}
       </Card.Body>
     </Card>
   );
