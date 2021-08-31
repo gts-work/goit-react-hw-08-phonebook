@@ -1,7 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import styles from "./Navigation.module.css";
 import { authSelectors } from "../../redux/auth";
 import { Nav } from "react-bootstrap";
 

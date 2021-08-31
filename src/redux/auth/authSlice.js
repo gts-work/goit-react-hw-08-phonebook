@@ -5,7 +5,7 @@ const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
-  isFetchingCurrentUser: false,
+  isFetchingCurrentUser: true,
   registerError: null,
   loginError: null,
 };
@@ -32,6 +32,7 @@ const authSlice = createSlice({
     [authOperations.logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
+      state.isFetchingCurrentUser = false;
       state.isLoggedIn = true;
       state.registerError = null;
       state.loginError = null;
@@ -39,6 +40,7 @@ const authSlice = createSlice({
     [authOperations.logIn.rejected](state, action) {
       state.isLoggedIn = false;
       state.registerError = null;
+      state.isFetchingCurrentUser = false;
       state.loginError = action.error.message;
     },
     [authOperations.logOut.fulfilled](state, action) {

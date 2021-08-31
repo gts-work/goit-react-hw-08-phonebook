@@ -12,7 +12,7 @@ export default function RegisterView() {
   const [password, setPassword] = useState("");
 
   const registerErrors = useSelector(authSelectors.getRegisterErrors);
-  console.log("RegisterView ~ registerErrors ==> ", registerErrors);
+  // console.log("RegisterView ~ registerErrors ==> ", registerErrors);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -43,7 +43,7 @@ export default function RegisterView() {
       <h1>Registration</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
           <Form.Label column sm="2">
             Name
           </Form.Label>

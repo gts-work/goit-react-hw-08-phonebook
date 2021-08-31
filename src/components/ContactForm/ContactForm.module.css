@@ -1,57 +1,28 @@
-.form {
-  width: 100%;
+.btn_submit {
+  /* .btn-primary */
+  color: #fff !important;
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
 
-  text-align: left;
-}
-
-.form > label {
-  display: block;
-
-  width: 100%;
-
-  margin-bottom: 25px;
-}
-
-.form_input {
-  width: 85%;
-
-  /* margin-bottom: 25px; */
-}
-
-.label_name {
+  /* .btn */
   display: inline-block;
-
-  width: 70px;
-}
-
-.add_contact_btn {
-  display: block;
-
-  margin-left: auto;
-  margin-bottom: 25px;
-}
-
-.add_contact_btn {
-  display: block;
-
-  padding: 10px 20px;
-  margin-left: auto;
-  margin-bottom: 25px;
-  /* margin: 10px; */
-
-  background-color: cadetblue;
-
-  border: none;
-  color: white;
-
-  font-size: 12px;
-  font-weight: 700px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
   text-align: center;
   text-decoration: none;
-
+  vertical-align: middle;
   cursor: pointer;
-}
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-.add_contact_btn:hover {
-  background-color: #008cba;
+  /* custom */
+  margin-left: 20em;
 }

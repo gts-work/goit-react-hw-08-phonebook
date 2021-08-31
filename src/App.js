@@ -48,6 +48,7 @@ function App() {
             <PrivateRoute path="/contacts">
               <ContactsView />
             </PrivateRoute>
+
             <Redirect to="/" />
           </Switch>
         </Suspense>

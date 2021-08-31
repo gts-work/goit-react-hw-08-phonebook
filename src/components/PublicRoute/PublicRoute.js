@@ -9,10 +9,11 @@ export default function PublicRoute({
 }) {
   const IsLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const isRedirect = IsLoggedIn && restricted;
+  console.log("PublicRoute isRedirect ==>> ", isRedirect);
+  console.log("PublicRoute restricted ==>>  ", restricted);
+  console.log("PublicRoute IsLoggedIn ==>>  ", IsLoggedIn);
 
   return (
-    <Route {...routeProps}>
-      {isRedirect ? <Redirect to="/contacts" /> : children}
-    </Route>
+    <Route {...routeProps}>{isRedirect ? <Redirect to="/" /> : children}</Route>
   );
 }

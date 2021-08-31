@@ -11,8 +11,8 @@ export default function LoginView() {
   const [password, setPassword] = useState("");
 
   const handleChange = ({ target: { name, value } }) => {
-    console.log("handleChange ~ name ===>> ", name);
-    console.log("handleChange ~ value ===>> ", value);
+    // console.log("handleChange ~ name ===>> ", name);
+    // console.log("handleChange ~ value ===>> ", value);
 
     switch (name) {
       case "email":
@@ -32,7 +32,7 @@ export default function LoginView() {
   };
 
   const loginErrors = useSelector(authSelectors.getLoginErrors);
-  console.log("LoginView ~ loginErrors  ==>> ", loginErrors);
+  // console.log("LoginView ~ loginErrors  ==>> ", loginErrors);
 
   return (
     <>

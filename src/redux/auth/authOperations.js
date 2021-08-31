@@ -48,6 +48,7 @@ const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI) => {
 
   try {
     const { data } = await axios.post("/users/login", credentials);
+    console.log("logIn ~ data ==>  ", data);
     token.set(data.token);
     return data;
   } catch (error) {

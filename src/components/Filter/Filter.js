@@ -7,9 +7,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { contactsAction } from "redux/contacts";
 import { сontactsSelectors } from "redux/contacts";
+import styles from "./Filter.module.css";
 
 const Fiter = ({ value, onChange }) => (
-  <InputGroup className="mb-3">
+  <InputGroup className={styles.input_filter}>
     <InputGroup.Text id="find-contacts-by-name">
       <FontAwesomeIcon icon={faSearch} />
     </InputGroup.Text>

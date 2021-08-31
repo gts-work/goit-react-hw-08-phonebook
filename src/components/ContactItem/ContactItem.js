@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
 
 import { contactsOperations } from "redux/contacts";
-import styles from "./ContactsList.module.css";
 
 const ContactItem = ({ id, name, number, onDelete }) => (
   <tr key={id}>

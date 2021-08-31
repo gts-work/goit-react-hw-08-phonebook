@@ -1,7 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
-import styles from "./AuthNav.module.css";
 
 const AUTH_NAV_TITLES = [
   { id: "t3", title: "Sign in", url: "/login" },
@@ -16,13 +14,7 @@ export default function AuthNav() {
 
         return (
           <Nav.Item>
-            <Nav.Link
-              exact
-              // className={styles.nav_link}
-              eventKey={id}
-              key={id}
-              href={url}
-            >
+            <Nav.Link exact eventKey={id} key={id} href={url}>
               <Button variant="outline-primary">{title}</Button>{" "}
             </Nav.Link>
           </Nav.Item>

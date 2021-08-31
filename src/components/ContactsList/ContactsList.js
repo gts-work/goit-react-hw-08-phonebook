@@ -5,15 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { contactsOperations } from "redux/contacts";
 import { сontactsSelectors } from "redux/contacts";
-import ContactItem from "./ContactItem";
-
-// const dispatch = useDispatch();
-// const isLoadingTodos = useSelector(todosSelectors.getLoading);
-
-// const [isModalOpen, setIsModalOpen] = useState(false);
-// const toggleModal = () => setIsModalOpen((state) => !state);
-
-// useEffect(() => dispatch(todosOperations.fetchTodos()), [dispatch]);
+import ContactItem from "../ContactItem/ContactItem";
 
 const ContactsList = () => {
   const dispatch = useDispatch();
@@ -29,19 +21,20 @@ const ContactsList = () => {
 
   return (
     <>
-      <h3>Contacts</h3>
-      <Table striped bordered hover>
-        <tr>
-          <th>User</th>
-          <th>Pfone number</th>
-          <th>Action</th>
-        </tr>
-        <tbody>
-          {contacts.map(({ id, name, number }) => (
-            <ContactItem id={id} name={name} number={number} />
-          ))}
-        </tbody>
-      </Table>
+      {contacts.length > 0 && (
+        <Table striped bordered hover>
+          <tr>
+            <th>User</th>
+            <th>Pfone number</th>
+            <th>Action</th>
+          </tr>
+          <tbody>
+            {contacts.map(({ id, name, number }) => (
+              <ContactItem id={id} name={name} number={number} />
+            ))}
+          </tbody>
+        </Table>
+      )}
     </>
   );
 };

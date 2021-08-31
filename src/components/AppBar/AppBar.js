@@ -8,7 +8,7 @@ import styles from "./AppBar.module.css";
 
 export default function AppBar() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  console.log("AppBar ~ isLoggedIn ===>>  ", isLoggedIn);
+  // console.log("AppBar ~ isLoggedIn ===>>  ", isLoggedIn);
 
   return (
     <>
