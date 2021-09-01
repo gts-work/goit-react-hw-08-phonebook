@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Button, Card, Nav } from "react-bootstrap";
 
 import { authSelectors } from "redux/auth";
@@ -21,13 +22,13 @@ const HomeView = () => {
             : "You must log in or register to start adding or saving your contacts"}
         </Card.Text>
         {isLoggedIn ? (
-          <Nav.Link exact eventKey="contacts" href="/contacts">
+          <NavLink exact key="contacts" to="/contacts">
             <Button variant="outline-primary">Go to you phonebook</Button>{" "}
-          </Nav.Link>
+          </NavLink>
         ) : (
-          <Nav.Link exact eventKey="contacts" href="/register">
+          <NavLink exact key="register" to="/register">
             <Button variant="outline-primary">To registration</Button>{" "}
-          </Nav.Link>
+          </NavLink>
         )}
       </Card.Body>
     </Card>
