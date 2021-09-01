@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
 
 const AUTH_NAV_TITLES = [
@@ -13,10 +14,10 @@ export default function AuthNav() {
         const { id, url, title } = nav;
 
         return (
-          <Nav.Item>
-            <Nav.Link exact eventKey={id} key={id} href={url}>
+          <Nav.Item key={id}>
+            <NavLink exact eventKey={id} to={url}>
               <Button variant="outline-primary">{title}</Button>{" "}
-            </Nav.Link>
+            </NavLink>
           </Nav.Item>
         );
       })}

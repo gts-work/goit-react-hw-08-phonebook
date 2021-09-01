@@ -1,5 +1,8 @@
+import React from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Navbar, Container } from "react-bootstrap";
+
 import Navigation from "../Navigation";
 import UserMenu from "../UserMenu";
 import AuthNav from "../AuthNav";
@@ -15,9 +18,9 @@ export default function AppBar() {
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
       <Navbar bg="primary" variant="dark" className={styles.abar}>
         <Container>
-          <Navbar.Brand eventKey="t1" href="/">
+          <NavLink exact to="/" className={styles.appNav}>
             Home
-          </Navbar.Brand>
+          </NavLink>
           <Navigation />
         </Container>
       </Navbar>
