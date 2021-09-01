@@ -1,0 +1,9 @@
+.authNav {
+  justify-content: flex-end !important;
+
+  margin: -8px;
+}
+
+.authNavItem {
+  margin: 8px;
+}
